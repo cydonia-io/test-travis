@@ -26,6 +26,7 @@
 # </blockquote>
 
 # %%
+#Scrypt programm
 #libraries needed for cryptowatch api
 import json, time, pandas, requests
 from datetime import datetime
