@@ -6,7 +6,7 @@ This is a temporary script file.
 """
 import requests
 
-# content of test_sample.py
+# content of test_code.py
 
 #Comprobar si el api rest de cryptowatch esta disponible para extraer datos
 def func():
