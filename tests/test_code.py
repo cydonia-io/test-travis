@@ -1,16 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+@author: angeljuarez
 
-This is a temporary script file.
 """
 import requests
 
+#run test
+# !python -m pytest
+
+#Import variables from src/api
+from src.api.api_rest import * 
+
+
 # content of test_code.py
 
-#Comprobar si el api rest de cryptowatch esta disponible para extraer datos
+#Check if cryptowatch api rest is available to extract data
 def func():
-    r = requests.get("https://api.cryptowat.ch/markets/bitmex/btcusd-perpetual-futures/price?apikey=M1SR7D1BZ1Q688SYH30V")
+    r = requests.get(api_price_bitmex_btcusd)
     if r.status_code == 200:
         return 200
     else:

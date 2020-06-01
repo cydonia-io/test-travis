@@ -26,8 +26,7 @@
 # </blockquote>
 
 # %%
-#Scrypt programm
-#libraries needed for cryptowatch api
+#libraries needed for cryptowatch api rest
 import json, time, pandas, requests
 from datetime import datetime
 import schedule
@@ -38,14 +37,18 @@ import csv
 import os
 import pandas as pd
 
-
+#path and import 
+import sys
+sys.path.append("..")
+from api.api_rest import *
 # %%
 #Function get price, extract, tranfor and load into csv
+
 def get_price():    
     
     try:
         #API Rest
-        r = requests.get("https://api.cryptowat.ch/markets/bitmex/btcusd-perpetual-futures/price?apikey=M1SR7D1BZ1Q688SYH30V")
+        r = requests.get(api_price_bitmex_btcusd)
         
     except:
         #In case error
@@ -64,7 +67,7 @@ def get_price():
         #---------- CSV ----------------
 
         #Name for our CSV file
-        path = 'price_bitmex_btcusd.csv'
+        path = '../csv/price_bitmex_btcusd.csv'
         #Columns
         column = ["date", "price", "exchange", "pair"]
 
@@ -105,7 +108,7 @@ schedule.every(3).seconds.do(get_price)
 while True: 
     # Checks whether a scheduled task  
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(0)
     
 
 
