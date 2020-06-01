@@ -7,8 +7,8 @@ The following unit test verifies that the Cryptowatch Rest API is available to e
 
 The unit test results are shown:
 
-Build Passing: It means that our unit test is correct.
-Build Fail: It means that our unit test is wrong.
+- Build Passing: It means that our unit test is correct.
+- Build Fail: It means that our unit test is wrong.
 
 Result Unit-Test Travis CI: 
 [![Build Status](https://travis-ci.com/cydonia-io/test-travis.svg?branch=master)](https://travis-ci.com/cydonia-io/test-travis)
